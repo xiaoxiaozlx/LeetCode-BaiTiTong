@@ -2,6 +2,10 @@
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
+# Claudian 本地会话与本机插件（不共享）
+.claudian/
+.obsidian/plugins/realclaudian/
+
 # 系统文件
 .DS_Store
 Thumbs.db
