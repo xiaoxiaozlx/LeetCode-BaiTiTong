@@ -45,24 +45,21 @@ while fast < len(nums):
 ## 二、做题记录
 
 ### 1. 两数之和（Easy）
-- **核心思路：**
+- **核心思路：** 一遍遍历，使用哈希表记录“值 → 下标”；对当前值查找互补值 `target - num`。
 - **代码实现：**
 ```python
-def twoSum(nums, target):
-    seen = {}
-
-    for i, num in enumerate(nums):
-        complement = target - 
-
-        if ______:
-            return ______
-
-        ______
-
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [i, seen[complement]]
+            seen[num] = i
 ```
-- **复杂度：** O(__) / O(__)
-- **掌握程度：** ✅ 🔄 ❌
-- **感悟/易错点：**
+- **复杂度：** O(n) / O(n)
+- **掌握程度：** 🔄（在框架提示后正确完成）
+- **感悟/易错点：** 先查后存可避免当前元素与自己匹配；答案下标的先后顺序不影响正确性。能正确模拟 `[3, 3]`：第一个 3 存入 `seen`，第二个 3 查到互补值并返回两个不同下标。
 
 ### 2. 字母异位词分组（Medium）
 - **核心思路：**
